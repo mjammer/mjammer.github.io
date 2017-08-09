@@ -353,25 +353,15 @@
 
       
         
-          
-            <p><strong> 远程仓库相关命令 </strong></p>
+          <p><strong> 远程仓库相关命令 </strong></p>
 <p>检出仓库 git clone git://github.com/jquery/jquery.git<br>查看远程仓库 git remote -v<br>添加远程仓库 git remote add [name] [url]<br>删除远程仓库 git remote rm [name]<br>拉取远程仓库 git pull [remoteName] [localBranchName]<br>推送远程仓库 git push [remoteName] [localBranchName]</p>
-<p><strong> 分支(branch)操作相关命令 </strong></p>
-<p>查看本地分支 git branch<br>查看远程分支 git branch -r<br>创建本地分支 git branch [name] —-注意新分支创建后不会自动切换为当前分支<br>切换分支 git checkout [name]<br>创建新分支并立即切换到新分支 git checkout -b [name]<br>删除分支 git branch -d [name] —- -d选项只能删除已经参与了合并的分支，对于未有合并的分支是无法删除的。如果想强制删除一个分支，可以使用-D选项<br>合并分支 git merge [name] —-将名称为[name]的分支与当前分支合并<br>创建远程分支(本地分支push到远程) git push origin [name]<br>删除远程分支 git push origin :heads/[name]<br>版本(tag)操作相关命令</p>
-<p>查看版本 git tag<br>创建版本 git tag [name]<br>删除版本 `git tag -d [name]<br>查看远程版本 git tag -r<br>创建远程版本(本地版本push到远程) git push origin [name]<br>删除远程版本 git push origin :refs/tags/[name]<br>子模块(submodule)相关操作命令</p>
-<p>添加子模块 1git submodule add [url] [path]<br>初始化子模块 git submodule init —-只在首次检出仓库时运行一次就行<br>更新子模块 git submodule update —-每次更新或切换分支后都需要运行一下<br>删除子模块 git rm –cached [path]<br>忽略一些文件、文件夹不提交</p>
-<p>在仓库根目录下创建名称为“.gitignore”的文件，写入不需要的文件夹名或文件，每个元素占一行即可，如 target bin *.db</p>
-<p><strong> 回滚相关 </strong></p>
-<p>修改最近一次提交的注释 git commit –amend 进入编辑模式<br>将某次错误的改变提交了，常用的有如下两种方式回滚:<br><code>git reset --hard HEAD^</code> 回滚最近一次提交<br><code>git reset --hard commitxxx</code>回滚至某次提交<br>有时候运用了第二个操作之后又想回到最近的某次提交，这个时候用git log查不到commitxxx，这个时候使用git reflog查看即可，这个日志保留的是对版本库的所有操作。</p>
-<p>回退某个文件到某次提交<br>1、使用git log filename查看某个文件的所有提交。<br>2、git reset commitxxx filename回滚。<br>3、提交. git commit<br>4、git checkout filename<br>经过以上四步，某个文件才算真正回滚成功。</p>
-<p>不小心将某次提交推送到远端。<br>1、git reset –hard<br>2、git push origin HEAD –force</p>
-<p>撤销指定的某次提交<br>git revert commitxxx</p>
-<p>重写历史。误将某个不属于版本库中的文件提交，该文件可能非常大，会使版本库变得异常大。这个时候简单的使用以上操作并不能真正的将文件从版本库中删除，这个时候就要使用一下操作进行删除。<br>1、git filter-branch –tree-filter ‘rm -rf filename’ –tag-name-filter cat – –all<br>2、git push origin –tags –force 3、git push origin –all –force</p>
-<p>使用pull强制覆盖本地文件。注意该操作会将本地所有文件覆盖掉<br>1、git fetch –all<br>2、git reset –hard origin/master</p>
-<p>暂存<br>需要在某个分支下进行开发，但此时这个分支下还有很多文件修改过，此时不能提交。这个时候就可以使用git中的暂存功能了。<br>git stash 将不能提交的修改暂存或 git stash save 注释<br>git stash pop 将暂存的修改取出或<br>git stash apply @xxx<br>git stash list 查看所有暂存</p>
-<p>冲突<br>1、普通文本文件冲突。按照常规的方法解决冲突，提交即可。<br>2、二进制文件冲突。二进制冲突，一般采用覆盖方式，要么保留版本库中的文件，要么保留本地文件，采用如下命令可以做到这点：<br>git checkout –theirs YOUR_BINARY_FILE // git checkout –ours YOUR_BINARY_FILE<br>git add YOUR_BINARY_FILE<br>git commit<br>git push</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/09/git常用命令/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
