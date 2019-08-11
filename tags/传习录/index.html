@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="分类: 随笔, 技术人呓语">
-    <meta name="description" content="分类: 随笔 | 技术人呓语">
+    <meta name="keywords" content="标签: 传习录, 技术人呓语">
+    <meta name="description" content="标签: 传习录 | 技术人呓语">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>分类: 随笔 | 技术人呓语</title>
+    <title>标签: 传习录 | 技术人呓语</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -223,24 +223,31 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
     
 
-<div id="category-cloud" class="container chip-container">
+<div id="tags" class="container chip-container">
     <div class="card">
         <div class="card-content">
             <div class="tag-title center-align">
-                <i class="fa fa-bookmark"></i>&nbsp;&nbsp;文章分类
+                <i class="fa fa-tags"></i>&nbsp;&nbsp;文章标签
             </div>
             <div class="tag-chips">
                 
                 
-                
-                <a href="/categories/随笔/" title="随笔: 2">
+                <a href="/tags/传习录/" title="传习录: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            style="background-color: #F9EBEA;">随笔
-                        <span class="tag-length">2</span>
+                            data-tagname="传习录" style="background-color: #F9EBEA;">传习录
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
+                
+                <a href="/tags/读书笔记/" title="读书笔记: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="读书笔记" style="background-color: #F5EEF8;">读书笔记
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
                 
             </div>
         </div>
@@ -252,53 +259,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     <article id="articles" class="container articles">
         <div class="row tags-posts">
             
-            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/07/11/can-tou-wei-he-ying-jie-ren-he/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="参透“为何”，迎接“任何”">
-                            
-                            <span class="card-title">参透“为何”，迎接“任何”</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                参透‘为何’，才能迎接‘任何’。(He who has a 'why' to live for can bear almost any 'how') —— 尼采
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-11
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/随笔/" class="post-category" target="_blank">
-                                    随笔
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/读书笔记/" target="_blank">
-                            <span class="chip bg-color">读书笔记</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
             
-            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-tags="传习录, 读书笔记" data-aos="fade-up">
                 <div class="card">
                     <a href="/2018/07/20/chuan-xi-lu-zhi-xu-ai-lu/">
                         <div class="card-image tag-image">
@@ -310,16 +272,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-在徐爱录中，主要记录了王阳明和徐爱就《大学》进行的探讨内容，比较了朱子和王阳明关于大学中部分内容的解释。对“格物”、“知行合一”、“心即理”给出了解释。
-
-王阳明的“心学”是在儒学背景下建立的，儒家认为人“性本善”
-“在亲民”的解释
-徐向
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-20
@@ -329,27 +281,13 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                                 <i class="fa fa-bookmark fa-fw icon-category"></i>
                                 
                                 <a href="/categories/随笔/" class="post-category" target="_blank">
-                                    随笔
+                                随笔
                                 </a>
                                 
                                 
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/传习录/" target="_blank">
-                            <span class="chip bg-color">传习录</span>
-                        </a>
-                        
-                        <a href="/tags/读书笔记/" target="_blank">
-                            <span class="chip bg-color">读书笔记</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
             
