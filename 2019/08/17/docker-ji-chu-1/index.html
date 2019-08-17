@@ -4,11 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="参透“为何”，迎接“任何”, 技术人呓语">
+    <meta name="keywords" content="docker 一 基础用法, 技术人呓语">
     <meta name="description" content="
-参透‘为何’，才能迎接‘任何’。(He who has a ‘why’ to live for can bear almost any ‘how’) —— 尼采
+子曾经曰过，docker是个好东西，需要一个系列的文章来总结。因此，本系列将会由浅入深的将我所理解的docker写下来，但我不打算写成入门式的文章，会更偏重理论和工作中遇到的坑。
 
-一周匆忙过后，在周末有了时间思考，内在的空虚就会浮现，当对自己的生活不满意">
+作为本系列的第一篇文章，让我们以几个例子来看看 dock">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>参透“为何”，迎接“任何” | 技术人呓语</title>
+    <title>docker 一 基础用法 | 技术人呓语</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -200,13 +200,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        参透“为何”，迎接“任何”
+                        docker 一 基础用法
                     </div>
                 </div>
             </div>
@@ -317,8 +317,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/读书笔记/" target="_blank">
-                                <span class="chip bg-color">读书笔记</span>
+                            <a href="/tags/docker-系列文章/" target="_blank">
+                                <span class="chip bg-color">docker 系列文章</span>
                             </a>
                         
                     </div>
@@ -329,8 +329,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/随笔/" class="post-category" target="_blank">
-                                随笔
+                            <a href="/categories/技术/" class="post-category" target="_blank">
+                                技术
                             </a>
                         
                     </div>
@@ -341,14 +341,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-11
+                    2019-08-17
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        703
+                        775
                     </div>
                     
 
@@ -372,17 +372,68 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>参透‘为何’，才能迎接‘任何’。(He who has a ‘why’ to live for can bear almost any ‘how’) —— 尼采</p>
+<p>子曾经曰过，docker是个好东西，需要一个系列的文章来总结。因此，本系列将会由浅入深的将我所理解的docker写下来，但我不打算写成入门式的文章，会更偏重理论和工作中遇到的坑。</p>
 </blockquote>
-<p>一周匆忙过后，在周末有了时间思考，内在的空虚就会浮现，当对自己的生活不满意时，就会产生一种忧郁的情绪。这就是所谓的“星期天神经官能症”（Sunday Neurosis）。</p>
-<p>“星期天神经官能症”本质上是“存在的空虚”引起的，而“存在的空虚”所表现的主要现象就是无聊和厌烦。叔本华在《人生的智慧》中写道：“人类注定永远在两极之间游移：不是灾难疾病，就是无聊厌烦。”</p>
-<p>出现“存在的空虚”是因为我们对生命感到全无意义，我们无法找到为了它就值得活下去的某种意义，我们被内在的空虚所萦绕纠缠。但是，生命的意义到底是什么呢？这个终极问题几乎困扰着我们所有人。</p>
-<p>德国作家维克多·弗兰克在他的《活出意义来》一书中给了我们答案。</p>
-<p>生命的意义因人而异，无法找到一个抽象的针对全人类的意义，甚至也无法找到一个人抽象的生命意义。当我们问自己生命的意义到底是什么时，“我们不是在问生命的一般意义为何，而是在问一个人存在的某一时刻中特殊的生命意义为何。一个人不能去寻找抽象的生命意义，每个人都有他自己的特殊天职或使命，而此使命是需要具体去实现的。他的生命无法重复，也不可取代。所以每个人都是独特的，也只有他具有特殊的机遇去完成其独特的天赋使命。”</p>
-<p>“人不应该去问他的生命意义是什么。他必须要认清，‘他’ 才是被询问的人。一言以蔽之，每一个人都被生命询问，而他只有用自己生命才能回答此问题；只有以‘负责’来答复生命。因此，‘能够负责’是人类存在最重要的本质。”</p>
-<p>在遭遇巨大打击时，能坚持下来的往往是那些有想要“负责”的人或事，正是这份“责任”拯救了他们。我们在寻找生命的意义时，需要明白我们自己是为了什么，对什么人或什么事情负责。</p>
-<p>“生命的真谛，必须在世界中找寻，而非在人身上或内在精神中找寻，因为它不是个封闭的体系。”</p>
-<p>生命的意义时刻在改变，我们需要通过发生在自己身上的每件事进行审视，帮它找到所隐藏的意义。</p>
+<p>作为本系列的第一篇文章，让我们以几个例子来看看 docker 的用法。</p>
+<p>第一个例子，把本地编译的二进制文件打包成一个镜像。</p>
+<p>首先我们写一个hello docker程序。</p>
+<pre class=" language-go"><code class="language-go">
+<span class="token comment" spellcheck="true">// hello.go</span>
+
+<span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">"fmt"</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"hello docker"</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<p>对应的Dockerfile文件如下：</p>
+<pre class=" language-docker"><code class="language-docker">
+<span class="token keyword">FROM</span> alpine<span class="token punctuation">:</span>latest
+
+<span class="token keyword">COPY</span> hello /usr/local/bin
+
+<span class="token keyword">CMD</span> <span class="token punctuation">[</span><span class="token string">"/usr/local/bin/hello"</span><span class="token punctuation">]</span>
+</code></pre>
+<p>在本地（mac 环境）编译，并打入镜像，两步命令如下：</p>
+<p>第一步编译go程序：</p>
+<p>➜ <code>env GOOS=linux GOARCH=386</code> go build hello.go</p>
+<p>第二步打包成镜像：</p>
+<p>➜ docker build -t hello:v1 .</p>
+<p>经过上面两步就打包成一个可用的镜像了，用下面命令运行一下试试看：</p>
+<p>➜ docker run hello:v1</p>
+<p>hello docker</p>
+<p>上面 Dockerfile 文件中，将本地编译的 hello 二进制拷贝到镜像中，并运行。我们用到了下面三个指令：</p>
+<p><code>FROM 指令</code> 这个指令是 Dockerfile 文件第一条必备指令，是指定<code>基础镜像</code>，在上面的例子中，我们从名为”alpine”的基础镜像开始制作镜像。</p>
+<blockquote>
+<p>Alpine 操作系统是一个轻型 Linux 发行版。Alpine Docker 相比于其他 Docker 镜像，它的容量非常小，仅仅只有 5MB 左右（对比 Ubuntu 系列镜像接近 200MB），且拥有非常友好的包管理机制。</p>
+</blockquote>
+<p><code>COPY 指令</code> 从源路径（本地）复制文件到目的路径（容器内）。</p>
+<p><code>CMD 指令</code> 用于指定默认的容器主进程的启动命令的。</p>
+<p>打包镜像时，我们用到 <code>docker build</code> 命令，该命令的格式如下：</p>
+<pre><code>
+docker build [选项] &lt;上下文路径/URL/-&gt;
+</code></pre><p>运行时，用到了 <code>docker run</code> 命令，该命令的格式如下：</p>
+<pre><code>
+docker run [参数] [镜像名 | 镜像 id ] [ 命令 ]
+</code></pre><p>在编译的时候，不能直接在本机（mac）<code>go build hello.go</code> 一把，需要交叉编译成镜像系统（Alpine）支持的架构，因此在编译的时候，加上了上面的环境变量，这样编译出来的程序才能正常的运行。但是，有时候不想这么麻烦，想在镜像中编译吼不吼？当然吼了，我们只需要更换基础镜像就可以了。</p>
+<pre><code>
+FROM golang:latest
+
+RUN mkdir -p /home/docker
+
+COPY hello.go /home/docker
+
+WORKDIR /home/docker
+
+RUN go build hello.go &amp;&amp; rm -rf /home/docker/*.go
+
+CMD [&quot;/home/docker/hello&quot;]
+</code></pre><p>上面我们构建了一个<code>镜像</code>，但是什么是 Docker 镜像呢？其实它是一个只读模板，它包含了容器启动所需的所有信息，包括运行程序和配置数据。要运行一个<code>容器</code>，就需要用到一个指定的镜像，而<code>容器</code>就是负责应用程序的运行，包括操作系统、用户添加的文件以及元数据。</p>
+<p><a href="http://mjammer.com/2019/08/17/docker-yan-jin-2/">接下来</a>，我们将讨论 docker 的演进历程，及背后的理论基础。</p>
 
             </div>
             <hr/>
@@ -544,9 +595,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://mjammer.com/2019/07/11/can-tou-wei-he-ying-jie-ren-he/';
-        this.page.identifier = '/2019/07/11/can-tou-wei-he-ying-jie-ren-he/';
-        this.page.title = '参透“为何”，迎接“任何”';
+        this.page.url = 'http://mjammer.com/2019/08/17/docker-ji-chu-1/';
+        this.page.identifier = '/2019/08/17/docker-ji-chu-1/';
+        this.page.title = 'docker 一 基础用法';
     };
     let disqus_shortname = 'mjammer';
 
@@ -573,22 +624,22 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/08/17/docker-ji-chu-1/">
+                <a href="/2019/08/17/docker-yan-jin-2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="docker 一 基础用法">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="docker 二 演进历史">
                         
-                        <span class="card-title">docker 一 基础用法</span>
+                        <span class="card-title">docker 二 演进历史</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
-子曾经曰过，docker是个好东西，需要一个系列的文章来总结。因此，本系列将会由浅入深的将我所理解的docker写下来，但我不打算写成入门式的文章，会更偏重理论和工作中遇到的坑。
+未完待续
 
-作为本系列的第一篇文章，让我们以几个例子来看看 dock
+
                         
                     </div>
                     <div class="publish-info">
@@ -625,29 +676,24 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/07/20/chuan-xi-lu-zhi-xu-ai-lu/">
+                <a href="/2019/07/11/can-tou-wei-he-ying-jie-ren-he/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="《传习录》之徐爱录">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="参透“为何”，迎接“任何”">
                         
-                        <span class="card-title">《传习录》之徐爱录</span>
+                        <span class="card-title">参透“为何”，迎接“任何”</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-在徐爱录中，主要记录了王阳明和徐爱就《大学》进行的探讨内容，比较了朱子和王阳明关于大学中部分内容的解释。对“格物”、“知行合一”、“心即理”给出了解释。
-
-王阳明的“心学”是在儒学背景下建立的，儒家认为人“性本善”
-“在亲民”的解释
-徐向
+                            参透‘为何’，才能迎接‘任何’。(He who has a 'why' to live for can bear almost any 'how') —— 尼采
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-20
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-11
                             </span>
                         <span class="publish-author">
                             
@@ -663,10 +709,6 @@
                 </div>
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/传习录/" target="_blank">
-                        <span class="chip bg-color">传习录</span>
-                    </a>
                     
                     <a href="/tags/读书笔记/" target="_blank">
                         <span class="chip bg-color">读书笔记</span>

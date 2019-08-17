@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>docker 二 演进历史</title>
+      <link href="/2019/08/17/docker-yan-jin-2/"/>
+      <url>/2019/08/17/docker-yan-jin-2/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>未完待续</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> docker 系列文章 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>docker 一 基础用法</title>
+      <link href="/2019/08/17/docker-ji-chu-1/"/>
+      <url>/2019/08/17/docker-ji-chu-1/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>子曾经曰过，docker是个好东西，需要一个系列的文章来总结。因此，本系列将会由浅入深的将我所理解的docker写下来，但我不打算写成入门式的文章，会更偏重理论和工作中遇到的坑。</p></blockquote><p>作为本系列的第一篇文章，让我们以几个例子来看看 docker 的用法。</p><p>第一个例子，把本地编译的二进制文件打包成一个镜像。</p><p>首先我们写一个hello docker程序。</p><pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">// hello.go</span><span class="token keyword">package</span> main<span class="token keyword">import</span> <span class="token string">"fmt"</span><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"hello docker"</span><span class="token punctuation">)</span><span class="token punctuation">}</span></code></pre><p>对应的Dockerfile文件如下：</p><pre class=" language-docker"><code class="language-docker"><span class="token keyword">FROM</span> alpine<span class="token punctuation">:</span>latest<span class="token keyword">COPY</span> hello /usr/local/bin<span class="token keyword">CMD</span> <span class="token punctuation">[</span><span class="token string">"/usr/local/bin/hello"</span><span class="token punctuation">]</span></code></pre><p>在本地（mac 环境）编译，并打入镜像，两步命令如下：</p><p>第一步编译go程序：</p><p>➜ <code>env GOOS=linux GOARCH=386</code> go build hello.go</p><p>第二步打包成镜像：</p><p>➜ docker build -t hello:v1 .</p><p>经过上面两步就打包成一个可用的镜像了，用下面命令运行一下试试看：</p><p>➜ docker run hello:v1</p><p>hello docker</p><p>上面 Dockerfile 文件中，将本地编译的 hello 二进制拷贝到镜像中，并运行。我们用到了下面三个指令：</p><p><code>FROM 指令</code> 这个指令是 Dockerfile 文件第一条必备指令，是指定<code>基础镜像</code>，在上面的例子中，我们从名为”alpine”的基础镜像开始制作镜像。</p><blockquote><p>Alpine 操作系统是一个轻型 Linux 发行版。Alpine Docker 相比于其他 Docker 镜像，它的容量非常小，仅仅只有 5MB 左右（对比 Ubuntu 系列镜像接近 200MB），且拥有非常友好的包管理机制。</p></blockquote><p><code>COPY 指令</code> 从源路径（本地）复制文件到目的路径（容器内）。</p><p><code>CMD 指令</code> 用于指定默认的容器主进程的启动命令的。</p><p>打包镜像时，我们用到 <code>docker build</code> 命令，该命令的格式如下：</p><pre><code>docker build [选项] &lt;上下文路径/URL/-&gt;</code></pre><p>运行时，用到了 <code>docker run</code> 命令，该命令的格式如下：</p><pre><code>docker run [参数] [镜像名 | 镜像 id ] [ 命令 ]</code></pre><p>在编译的时候，不能直接在本机（mac）<code>go build hello.go</code> 一把，需要交叉编译成镜像系统（Alpine）支持的架构，因此在编译的时候，加上了上面的环境变量，这样编译出来的程序才能正常的运行。但是，有时候不想这么麻烦，想在镜像中编译吼不吼？当然吼了，我们只需要更换基础镜像就可以了。</p><pre><code>FROM golang:latestRUN mkdir -p /home/dockerCOPY hello.go /home/dockerWORKDIR /home/dockerRUN go build hello.go &amp;&amp; rm -rf /home/docker/*.goCMD [&quot;/home/docker/hello&quot;]</code></pre><p>上面我们构建了一个<code>镜像</code>，但是什么是 Docker 镜像呢？其实它是一个只读模板，它包含了容器启动所需的所有信息，包括运行程序和配置数据。要运行一个<code>容器</code>，就需要用到一个指定的镜像，而<code>容器</code>就是负责应用程序的运行，包括操作系统、用户添加的文件以及元数据。</p><p><a href="http://mjammer.com/2019/08/17/docker-yan-jin-2/">接下来</a>，我们将讨论 docker 的演进历程，及背后的理论基础。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> docker 系列文章 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>参透“为何”，迎接“任何”</title>
       <link href="/2019/07/11/can-tou-wei-he-ying-jie-ren-he/"/>
       <url>/2019/07/11/can-tou-wei-he-ying-jie-ren-he/</url>
