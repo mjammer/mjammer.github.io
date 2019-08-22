@@ -5,10 +5,10 @@
     
     <entry>
       <title>docker 二 演进历史</title>
-      <link href="/2019/08/17/docker-yan-jin-2/"/>
-      <url>/2019/08/17/docker-yan-jin-2/</url>
+      <link href="/2019/08/22/docker-yan-jin-2/"/>
+      <url>/2019/08/22/docker-yan-jin-2/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>未完待续</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>如果说我看得比别人更远些，那是因为我站在巨人的肩膀上。 —— 牛顿</p></blockquote><h2 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h2><p>docker 的兴起并不是靠单打独斗，而是背后有着行业内十几年甚至几十年的技术沉淀。它的出现解决了一个一直以来的争论——”软件究竟应该通过什么样的方式进行交互？”，它通过容器镜像，为大家提供了一种全新的组织软件的思路。</p><p>在我看来，容器主要就是一种隔离的执行环境，比虚拟机更轻量。docker容器出现以前，人们使用虚拟机来隔离环境，当然是有代价的，虚拟机拥有独立的系统，分割物理机的各项资源。显然在一台物理机只能启动少量有限的虚拟机。下表为容器和虚拟机做一个简单的对比：</p><table><thead><tr><th>特性</th><th>容器</th><th>虚拟机</th></tr></thead><tbody><tr><td>启动速度</td><td>秒</td><td>分钟</td></tr><tr><td>硬盘</td><td>MB</td><td>GB</td></tr><tr><td>性能</td><td>接近原生</td><td>弱于原生</td></tr><tr><td>系统支持</td><td>单机上千</td><td>几十个</td></tr></tbody></table><p>一般情况下，容器的优势就一下子凸显出来。</p><p>docker 背后的技术可以追溯到1979年，那时 Unix 系统和 C 语言还在孕育当中，贝尔实验室为了能够在他们的 Unix 系统上“隔离”出一个可以供软件进行构建和测试的环境，他们就创造了 chroot 系统调用，能够使得进行环境被隔离出来。</p><p>后期也出现了类似的技术，比如 FreeBSD 的jail，Oracle Solaris Container等技术，这些技术都是隔离出一个”沙箱“环境，但是这些”沙箱“技术因为”云“的概念还尚未普及，所以他们也只是一门小众技术，局限于特定的领域。</p><p>2004-2007年，Google 发布了一种名为”Process Container“的技术，目的是希望能够拥有虚拟化技术类似，能够给进程提供操作系统级别的资源限制、优先级控制、资源审计能力和进程控制能力，但是又没那么重。2007年，这种技术正式进入了 Linux 内核主干，被更名为 Cgroups（因为内核 container 概念另作他用）</p><p>2008年，融合了 Cgroups 的资源管理能力 和 Linux Namespace 的视图隔离能力，LXC（Linux Container）容器技术出现了。这段时期，云计算也开始正式发展。</p><p>在 docker 出现之前，关于”软件该如何进行交互“，不同阵营有不同观点，也发展了各自的应用领域。</p><p>2013年，docker 项目发布，靠容器化一举统一各大阵营。</p><p>后面就是解决容器该如何编排的问题了。更多详情请查看 <a href="https://mp.weixin.qq.com/s/pIGz-628RANwVMJt7f2vog" target="_blank" rel="external">容器十年</a></p><h2 id="技术发展"><a href="#技术发展" class="headerlink" title="技术发展"></a>技术发展</h2><p>“踩在巨人肩膀上”的 docker 也并没有固步自封，它也一直在更新迭代，框架在不停的升级优化。</p><p>docker 引擎由 Docker CLI， Docker daemon， containerd 和 runc组成，如下图所示：</p><div style="width: 300px; margin: auto"><img src="docker2_1.png" alt="图一"></div><p>docker 早期是依赖 LXC 的，而且只能在 Linux 平台才能使用，通过 LXC 在创建隔离的容器环境。</p><div style="width: 300px; margin: auto"><img src="docker2_3.png" alt="图二"></div><p>缺点也很明显，docker 被局限于 Linux 平台了，而且 LXC 也不是自己独有的技术，受制于第三方组件。对于任何一个有梦想的开发者来说，这都是不能允许出现的，所以他们在0.9版本果断的开发了自己的 libcontainer 技术，替换了 LXC。</p><p>替换了 LXC 之后呢，就又盯上了 Docker daemon，这时它是一个巨大的单体服务，每次更新就必须把所有运行的 container 停掉，这对于线上服务是不可容忍的。于是他们把容器相关的执行逻辑代码全部从 daemon 中移走，就形成了现在的 containerd 程序，用来管理容器，如 start|stop|pause|rm…</p><p>上面我们提到，使用自己的 libcontainer 来替换 LXC后，他们又提供了对 libcontainer 更小、更轻量级的封装 —— runc。它的作用很单纯，就是创建容器。下图就是更详细的结构图。</p><div style="width: 300px; margin: auto"><img src="docker2_2.png" alt="图三"></div><p>当我们在 Docker client中输入命令如：<code>docker container run</code>之后，daemon 进行解析，然后调用 containerd 提供的 API进行命令下发，containerd 收到命令之后，就会准备好镜像环境，通过 runc 来创建容器，创建容器完成之后，runc 就会退出，容器的父进程就转交给 shim （守护进程）。</p><p>daemon 程序被不断的拆分之后，并不是说已经没有什么业务了，其实像镜像管理、网络等功能还是在上面。但是它的更新已经不会再影响到正在运行的容器了。</p><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>docker 在不停的发展，指不定哪天技术架构又会有大的改动，但我相信在大家的智慧下，它扔将往好的方向发展，直到被更好的技术取代。</p><p><a href="http://mjammer.com/2019/08/17/docker-yan-jin-2/">接下来</a>，我们将讨论 docker 中的 image 和 container。</p>]]></content>
       
       
       <categories>
@@ -95,9 +95,9 @@
       
         <tags>
             
-            <tag> 传习录 </tag>
-            
             <tag> 读书笔记 </tag>
+            
+            <tag> 传习录 </tag>
             
         </tags>
       
