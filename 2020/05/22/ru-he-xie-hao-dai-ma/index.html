@@ -1,0 +1,1314 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="如何写“好”代码, 技术人呓语">
+    <meta name="description" content="代码规范与质量本文是关于代码规范和代码质量相关的主题。
+从我们手放在键盘上，敲除第一行代码开始，我们就在写bug的路上一去不返了，我们不是在写bug就是在写bug的路上，当然这些都很正常，除非我们一行代码都不写，那就不会出现bug。
+大家都">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>如何写“好”代码 | 技术人呓语</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">技术人呓语</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">技术人呓语</div>
+        <div class="logo-desc">
+            
+            思绪很乱，偶尔停留
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        如何写“好”代码
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/代码质量/" target="_blank">
+                                <span class="chip bg-color">代码质量</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/技术/" class="post-category" target="_blank">
+                                技术
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-05-22
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        6.5k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        24 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="代码规范与质量"><a href="#代码规范与质量" class="headerlink" title="代码规范与质量"></a>代码规范与质量</h1><p>本文是关于代码规范和代码质量相关的主题。</p>
+<p>从我们手放在键盘上，敲除第一行代码开始，我们就在写bug的路上一去不返了，我们不是在写bug就是在写bug的路上，当然这些都很正常，除非我们一行代码都不写，那就不会出现bug。</p>
+<p>大家都听过一个名词——技术债务，随着我们写的代码越来越多，技术债务也就随之升高。什么是技术债务呢？通俗来讲就是我们在软件开发的过程中，为了达到当前的目标，写一些只对当前工作内容有效的代码，反正这些代码能够很快的完成工作，再说了“又不是不能用.jpg”。在项目紧急的时候，这么做无可厚非，只要我们在事后能够及时的偿还这些“技术债务”就行了。在事后能够及时偿还“技术债务”，这是理想情况，现实情况更多的是在代码上写上“TODO：这个我们有时间再优化”，众所周知，TODO is NOT TODO。我刚参加工作的时候，领导说的最多的话就是“出来混迟早要还的”，“技术债”也是这样。</p>
+<p>随着项目一个接着一个，似乎每个项目又都是紧急的，“技术债”越积越高，当初承诺要优化的似乎从来没有时间去优化。而我们在项目紧急的时候写的那些“又不是不能用”的代码，好像变得很难理解了。想再在上面写这些勉强可用的代码也变得困难了，结果造成的情况就是“前方产品故障频发，后方开发人员不停地扑火”。</p>
+<p>影响产品质量的因素有很多，这里只讨论代码质量与产品质量的关系，应该怎样去提高代码质量。本文将从以下三个方面来讨论：</p>
+<ul>
+<li>代码风格与规范</li>
+<li>代码重构的方式</li>
+<li>单元测试</li>
+</ul>
+<hr>
+<h3 id="代码风格与规范"><a href="#代码风格与规范" class="headerlink" title="代码风格与规范"></a>代码风格与规范</h3><blockquote>
+<p>首先是为人编写程序，其次才是计算机。</p>
+</blockquote>
+<p>代码风格无非就是那些不写也没关系，不会影响正常功能的东西，譬如命名、注释、函数名等。但是风格良好的代码，可读性就更好，“挨揍”和“挨骂”的可能性就更少，而这些“揍”你和“骂”你的也许就是半年后的自己。</p>
+<h4 id="可读性基本定理"><a href="#可读性基本定理" class="headerlink" title="可读性基本定理"></a>可读性基本定理</h4><p>代码的写法应当使别人（可能是6个月后的自己）理解它所需的时间最小化。要经常地想一想其他人是不是会觉得你的代码容易理解，这需要额外的时间。这样做就需要你打开大脑中从前在编码时可能没有打开的那部分功能。</p>
+<h4 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h4><blockquote>
+<p>一个好的、有意义的命名能够传递足够多的信息，达到替代冗余注释的效果，只通过名字就可以获得大量的信息。</p>
+</blockquote>
+<ul>
+<li><p>名字要有意义</p>
+<p>在为函数或者变量去名字的时候，想一想这个名字需不需要注释来补充说明，如果需要的话，说明取的名字不够好。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">var</span> d <span class="token builtin">int32</span> <span class="token comment" spellcheck="true">// 文件创建时间，天</span>
+<span class="token keyword">var</span> daysSinceCreation <span class="token builtin">int32</span>
+</code></pre>
+<p>以上代码中，第一行中的变量<code>d</code>就没有第二行的<code>daysSinceCreation</code>更有意义。</p>
+</li>
+<li><p>避免空泛的名字</p>
+<p>比如<code>tmp</code>,<code>ret</code>,<code>foo</code>,<code>bar</code>等无实际信息的名字。当然，在作用域小，只是临时存储一下中间变量除外。</p>
+<pre class=" language-go"><code class="language-go">tmp <span class="token operator">:=</span> user<span class="token punctuation">.</span><span class="token function">Name</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+tmp <span class="token operator">+=</span> <span class="token string">" "</span> <span class="token operator">+</span> user<span class="token punctuation">.</span><span class="token function">Tel</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+tmp <span class="token operator">+=</span> <span class="token string">" "</span> <span class="token operator">+</span> user<span class="token punctuation">.</span><span class="token function">Score</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>以上代码，<code>userInfo</code>就比<code>tmp</code>变量可读性更好。</p>
+</li>
+<li><p>使用更专业的名词，更有表现力</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">GetPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token keyword">func</span> <span class="token function">DownloadPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>比如有个函数，作用是从网络上获取页面信息，用<code>GetPage</code>容易造成疑惑，不清楚是从数据库还是从网络上获取数据，使用<code>DownloadPage</code>就更专业，更能体现这个函数的功能。</p>
+</li>
+<li><p>用具体的名字代替抽象的名字</p>
+<p>在给变量、函数或者其他元素命名时，要把它描述得更具体而不是更抽象。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">ServerCanStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token keyword">func</span> <span class="token function">CanListenOnPort</span><span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token comment" spellcheck="true">// 更好</span>
+</code></pre>
+<p>以上代码中<code>CanListenOnPort比</code>ServerCanStart`更具体。</p>
+<p>代码中硬编码的数字也更抽象，用一个便于搜索的变量替代。</p>
+</li>
+<li><p>名字可以带上其他重要信息</p>
+<p>比如，在值为毫秒的变量后面加上<code>_ms</code>，或者在还需要转义的，未处理的变量前面加上<code>raw_</code>。</p>
+</li>
+<li><p>类名和方法名</p>
+<ul>
+<li>类名和对象名使用名词或名词短语，如Customer、AddressParser()</li>
+<li>方法名使用动词或动词短语，如 DeleteUser() 、Save()</li>
+</ul>
+</li>
+</ul>
+<p>名字容易且重要，当你看到一个毫无意义的变量或方法名时，毫不犹豫的改掉，现在的IDE都支持一键改名，几乎毫不费力的改善了代码质量。</p>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p>首先引用《Clean Code》中的几句对注释的描述：</p>
+<blockquote>
+<p>“什么也比不上放置良好的注释来得有用。什么也不会比乱七八糟的注释更有本事搞乱一个模块。什么也不会比陈旧、提供错误信息的注释更具有破坏力”</p>
+<p>“注释是为了弥补代码的不足”</p>
+<p>“能不能不写注释，从代码上可以很清晰的了解用途”</p>
+<p>好的代码自己本身就是最好的文档。当你打算加注释的时候，问问自己‘我如何才能把我的代码改善到不需增加注释？’重构自己的代码，然后使文档让其更清楚。 — Steve McConnell《代码大全》的作者</p>
+</blockquote>
+<p>从上面大概可以看出，该书的作者对注释持负面态度，作者认为好代码 &gt; 坏代码 + 好注释。</p>
+<p>很多时候我们又不得不写一些注释，仅仅用代码不能很清晰的描述我们的真实意图。那么什么是好的注释？什么样的注释是坏注释呢？又该如何去写呢？</p>
+<p>注释应该是对“意图”进行诠释，好的注释言简意赅，用最少的文字传达了必要的信息，例如以下几种情况的注释：</p>
+<ul>
+<li>这些看起来很怪异的代码为什么这么写</li>
+<li>代码中埋下的“坑”是什么，“这个函数只有我才能调用通，且不能改”</li>
+<li>常量定义，常量的用途，为何取这个值</li>
+<li>总结性的文字描述，告诉别人这段代码的工作机制</li>
+<li>产品/老板要求一定要有这个业务，特殊处理</li>
+</ul>
+<p>而坏注释对代码并没有多少用处，甚至会造成理解上的障碍，如下面这几种情况：</p>
+<ul>
+<li><p>从代码本身就能快速推断的事实写注释</p>
+<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">// Account 结构体定义</span>
+<span class="token keyword">type</span> Account <span class="token keyword">struct</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 设置账户名</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>a <span class="token operator">*</span>Account<span class="token punctuation">)</span><span class="token function">SetName</span><span class="token punctuation">(</span>name <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>给不好的名字加注释</p>
+<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">// Release the handle for this key. This doesn't modify the actual registry.</span>
+<span class="token keyword">func</span> <span class="token function">DeleteRegistry</span><span class="token punctuation">(</span>key <span class="token builtin">string</span><span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">ReleaseRegistryHandle</span><span class="token punctuation">(</span>key <span class="token builtin">string</span><span class="token punctuation">)</span>
+</code></pre>
+<p>与其花额外的精力为不好的名字进行注释，还不如取一个更好的名字。</p>
+</li>
+<li><p>大量的废弃代码注释</p>
+<p>现在都有版本管理，代码不会丢失，在需要的时候看看文件提交历史就能够找回。这些代码果断删除吧，让代码更干净一点。</p>
+</li>
+</ul>
+<p>那我们注释的时候又该如何写呢，下面有些小Tips可以作为参考。</p>
+<ul>
+<li><p>精简注释，让注释描述简洁</p>
+<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">// 学生的分数情况，第一个map中的key是学生姓名，第二个map分别是课程名和对应的分数</span>
+ScoreMap <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">int32</span>    
+
+<span class="token comment" spellcheck="true">// userName -> [project:score]</span>
+ScoreMap <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">int32</span>
+</code></pre>
+<p>上面两个注释都能说明意图，但是第二个注释显得更简洁，不啰嗦。</p>
+</li>
+<li><p>精确描述函数的行为</p>
+<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">// 返回文件的行数</span>
+<span class="token keyword">func</span> <span class="token function">CountLines</span><span class="token punctuation">(</span><span class="token builtin">string</span> fileName<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// 统计文件中的 '\n' 换行符个数</span>
+<span class="token keyword">func</span> <span class="token function">CountLines</span><span class="token punctuation">(</span><span class="token builtin">string</span> fileName<span class="token punctuation">)</span>
+</code></pre>
+<p>第一个注释描述的不够清晰，例如空文件算0行还是1行？hello\nworld 算几行？而第二个注释就没有歧义。</p>
+</li>
+<li><p>用适当例子说明特殊情况</p>
+<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">// 移除 src 中的 chars </span>
+<span class="token keyword">func</span> <span class="token function">Strip</span><span class="token punctuation">(</span>src<span class="token punctuation">,</span> chars <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token builtin">string</span>
+
+<span class="token comment" spellcheck="true">// Example:Strip("abba/a/ba", "ab") -> "/a/"</span>
+<span class="token keyword">func</span> <span class="token function">Strip</span><span class="token punctuation">(</span>src<span class="token punctuation">,</span> chars <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token builtin">string</span>
+</code></pre>
+<p>第二个在注释中添加恰当的例子，说明了<code>Strip</code>函数的意图。</p>
+</li>
+<li><p>直接申明代码意图</p>
+<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">//add by xx  产品要求一定要给某些高级用户增加xx功能。 时间：2020-04-30</span>
+<span class="token keyword">func</span> <span class="token function">Increase</span><span class="token punctuation">(</span>userId <span class="token builtin">string</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ul>
+<p>当你感觉需要撰写注释时，请先尝试重构，试着让所有注释都变得多余。</p>
+<h4 id="逻辑"><a href="#逻辑" class="headerlink" title="逻辑"></a>逻辑</h4><p>逻辑是代码的血肉，清晰的逻辑会让代码更容易理解，有些常用的手段可以稍微简化代码的复杂度。</p>
+<ul>
+<li><p>使用“卫语句（guard clause）”从函数中提前返回</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">Save</span><span class="token punctuation">(</span>content <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token builtin">bool</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 很多其他判断条件</span>
+    <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>最小化嵌套</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">if</span> userResult <span class="token operator">==</span> SUCCESS<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> permissionResult <span class="token operator">!=</span> SUCCESS<span class="token punctuation">{</span>
+        reply<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token string">"error.."</span><span class="token punctuation">)</span>
+        reply<span class="token punctuation">.</span>Done
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    reply<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+    reply<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span>userResult<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+reply<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>上面代码 if … else 嵌套对理解并没增加什么困难，但是当在一个复杂函数中时，理解这个嵌套就比较吃力，我们可以提前返回，调整代码顺序，理解起来更容易。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">if</span> userResult <span class="token operator">!=</span> SUCCESS<span class="token punctuation">{</span>
+    reply<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token string">"error.."</span><span class="token punctuation">)</span>
+    reply<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span> permissionResult <span class="token operator">!=</span> SUCCESS<span class="token punctuation">{</span>
+    reply<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token string">"error.."</span><span class="token punctuation">)</span>
+    reply<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+reply<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span>
+reply<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>在循环中出现嵌套我们也可以采取提前返回的方法，只是把<code>return</code>换成<code>break</code>或<code>continue</code>。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> item <span class="token operator">:=</span> <span class="token keyword">range</span> results<span class="token punctuation">{</span>
+  <span class="token keyword">if</span> item <span class="token operator">!=</span> <span class="token boolean">nil</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// do ...</span>
+    <span class="token keyword">if</span> item<span class="token punctuation">.</span>name <span class="token operator">!=</span> <span class="token string">""</span><span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// do...</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>采取条件提前返回，调整代码后：</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> item <span class="token operator">:=</span> <span class="token keyword">range</span> results<span class="token punctuation">{</span>
+  <span class="token keyword">if</span> item <span class="token operator">==</span> <span class="token boolean">nil</span><span class="token punctuation">{</span>
+    <span class="token keyword">continue</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> item<span class="token punctuation">.</span>name <span class="token operator">==</span> <span class="token string">""</span><span class="token punctuation">{</span>
+    <span class="token keyword">continue</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment" spellcheck="true">// do ...</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><p>函数应该尽量写的短小，但是该写多小并没有明确的标准，一般来说20-30行最佳。Go语言中，一个函数如果很大，我们可以采用匿名函数将逻辑写的更清晰。</p>
+<p>一个函数只做一件事，不要把不相关的逻辑都堆在一个函数中，把这个函数变成了万能函数。如果发现足够的行数都是在解决不相关的字问题时，果断的把它抽取到独立的函数中。</p>
+<p>在写代码时，可以问问自己下面这些问题，有助于识别不相关代码：</p>
+<ul>
+<li>看到某个函数或者代码块时，问问自己：这段代码的高层次的目标时什么？</li>
+<li>对于每一行代码，问一下：它是直接为了目标而工作吗？这段代码高层次的目标是什么呢？</li>
+</ul>
+</li>
+</ul>
+<h4 id="过度设计"><a href="#过度设计" class="headerlink" title="过度设计"></a>过度设计</h4><p>  程序员倾向于高估有多少功能真的对于他们的项目来讲是必不可少的。很多功能结果没有完成，或者没有用到，也可能只是让程序更复杂。程序员还倾向于低估实现一个功能所要花的工夫。</p>
+<p>  有些用不到的功能并没有想象中那么重要，不一定会在未来用到，我们不需要为这些可能用不到的功能投入宝贵的时间。如一个内部的系统，本身没几个人用，去要求系统的高可用、分布式、微服务和国际化等明显不合理的需求。</p>
+<p>  <strong>以上就是代码规范相关的几点内容，没多少难度却意义重大。</strong></p>
+<hr>
+<h3 id="代码重构的方式"><a href="#代码重构的方式" class="headerlink" title="代码重构的方式"></a>代码重构的方式</h3><p>一幢有少许破窗的建筑为例，如果那些窗不被修理好，可能将会有破坏者破坏更多的窗户。最终他们甚至会闯入建筑内，如果发现无人居住，也许就在那里定居或者纵火。一面墙，如果出现一些涂鸦没有被清洗掉，很快的，墙上就布满了乱七八糟、不堪入目的东西；一条人行道有些许纸屑，不久后就会有更多垃圾，最终人们会视若理所当然地将垃圾顺手丢弃在地上。这个现象，就是犯罪心理学中的破窗效应。</p>
+<p>我们的代码也是一样，一段优秀的代码，如果从小到变量命名开始不注意，就会开始“腐烂”，直到自己都忍受不了，最后推倒重来，开始恶性循环。因此，我们需要经常对代码进行重构，不断改善软件设计，使软件更容易理解，保持软件的“生命力”。</p>
+<p><strong>何为重构？</strong></p>
+<p>在不改变代码外在行为的前提下，对代码做出修改，以改进程序的内部结构。本质上说，重构就是在代码写好之后改进它的设计，这个改进会让代码更容易理解，更易于修改，而这可能使程序运行得更快，也可能使程序运行得更慢。它融入到整个开发过程，而不是需要专门的时间，需要专门时间来写那是“重写”，而不是“重构”。</p>
+<p><strong>重构时机</strong></p>
+<p>重构是融入到整个开发过程的，上一分钟在写代码，下一分钟可能就在重构。当出现下面一些时机，就可以考虑重构了。</p>
+<ul>
+<li><p>新添加功能</p>
+<p>每次在新添加功能之前，考虑一下是不是把当前代码重构一下，更容易添加这个功能。</p>
+<blockquote>
+<p> 每次要修改时，首先令修改很容易（警告：这件事有时会很难），然后再进行这次容易的修改。 </p>
+</blockquote>
+</li>
+<li><p>重复代码——DRY</p>
+<p>当看到重复代码时，毫不犹豫进行重构。</p>
+</li>
+<li><p>过时的知识</p>
+<p>例如当一个语言出现新特性，发现这个特性能够使代码更简洁，更优雅时，可以考虑重构。</p>
+</li>
+<li><p>一个小的重构是否能使代码更容易理解</p>
+</li>
+</ul>
+<p>有个通用的原则就是，保证每次离开你所见到的代码时，比你刚看到时更漂亮。当然也有不需要重构的情况，例如有些运行良好的底层“祖传代码”，已经成功运行N年没出现过bug，很少人动的代码，那就不要重构了，不能保证你重构的代码比现在更好。而有些代码发现重写比重构更容易时，也不要去重构了，直接重写吧。</p>
+<p>在重构之前，一定要确保有良好的测试，在这个前提下用简短又慎重的步骤进行，一次修改一个小点，然后频繁的运行测试用例，保证每次的重构都能通过所有测试，不影响系统正常运行。</p>
+<p><strong>“坏味道”与技巧</strong></p>
+<p>识别出代码中的“坏味道”，然后用一些重构技巧来优化，下面列举一些典型的“坏味道”和常用的重构技巧。</p>
+<ul>
+<li><p>神秘的命名</p>
+<p>正如本文代码风格中关于命名的描述，遇到令人费解的变量、字段或命名时，对它们进行改名操作。现在IDE都支持一键改名操作。</p>
+</li>
+<li><p>重复代码</p>
+<p>重复代码的危害众所周知，修改一处代码的时候还需要兼顾其他代码。</p>
+<p>改变代码的顺序，重组代码，把重复代码提炼成函数。</p>
+</li>
+<li><p>过长的函数</p>
+<p>每当感觉某段代码需要注释来说明的时候，可以把要说明的东西写进一个独立的函数中，并以其用途命名。我们可以对一组甚至短短一行代码做这件事。哪怕替换后的函数调用动作比函数自身还长，只要函数名称能够解释其用途，我们也该毫不犹豫地那么做。关键不在于函数的长度，而在于函数“做什么”和“如何做”之间的语义距离。</p>
+</li>
+<li><p>参数列表过长</p>
+<p>引入参数对象，将相关的参数用一个对象封装起来。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">Save</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> path<span class="token punctuation">,</span> perm <span class="token builtin">string</span><span class="token punctuation">,</span> length <span class="token builtin">int</span><span class="token punctuation">,</span> flag <span class="token builtin">int</span> <span class="token operator">...</span><span class="token punctuation">)</span>
+</code></pre>
+<p>有些函数有甚至上十个参数，调用的时候容易传参错误，可以定义一个对象，调用时传递该对象即可。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">type</span> Param <span class="token keyword">struct</span><span class="token punctuation">{</span>
+  name <span class="token builtin">string</span>
+  path <span class="token builtin">string</span> 
+  perm <span class="token builtin">string</span>
+  length <span class="token builtin">int</span>
+  flag <span class="token builtin">int</span> 
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">Save</span><span class="token punctuation">(</span>data Param<span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li><p>全局变量</p>
+<p>全局变量的危害在于，当不止一处代码会对其进行修改，往往会造成不可预期的结果。</p>
+<p>我们可以采用单例模式或着封装变量，控制全局变量的作用域，对外只提供操作的接口。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">var</span> global <span class="token operator">*</span>Asset
+
+<span class="token keyword">func</span> <span class="token function">SetAssetName</span><span class="token punctuation">(</span>name <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    global<span class="token punctuation">.</span>Name <span class="token operator">=</span> name
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>发散式变化</p>
+<p>当我们修改或增加一处功能时，必须同时修改若干个函数，这叫做发散式变化。可以提炼和搬移函数，做到“每次只关心一个上下文”，将相关函数搬到一起。</p>
+</li>
+<li><p>依恋情节</p>
+<p>一个函数跟另一个模块中的函数或者数据交流格外频繁，远胜于在自己所处模块内部的交流，这就是依恋情结的典型情况。</p>
+<p>判断哪个模块拥有的此函数使用的数据最多，然后就把这个函数和那些数据摆在一起，将那些总是一起变化的东西放在一块。</p>
+</li>
+<li><p>数据泥团</p>
+<p>将分散的变量汇总起来，为数据泥团新建一个类，不要担心只用到了其中几个字段。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">type</span> PermData <span class="token keyword">struct</span><span class="token punctuation">{</span>
+  path <span class="token builtin">string</span>
+  name <span class="token builtin">string</span>
+  perm <span class="token builtin">string</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>过长的消息链（调用链）</p>
+<p>过长的消息链，一旦当其中一个对象发生修改，我们就不得不更改所有地方。</p>
+<pre class=" language-go"><code class="language-go">name <span class="token operator">=</span> <span class="token function">company</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">section</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">user</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>增加一个“中间者”，减少消息链。</p>
+</li>
+<li><p>过大的类</p>
+<p>观察一个大类的使用者，经常能找到如何拆分类的线索。看看使用者是否只用到了这个类所有功能的一个子集，每个这样的子集都可能拆分成一个独立的类。</p>
+</li>
+</ul>
+<hr>
+<h3 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h3><p>有人说，看一段代码质量如何，就看代码中的接口多不多。一个接口都没有的代码，很难说是好代码，至少很难测试。在敏捷开发中，有一种TDD方案，在正式写代码之前，先写单元测试，然后再让单元测试通过，</p>
+<p>这种方式能够让代码更优雅，更简洁，当然需要的开发时间也很多。理想是美好的，现实情况是，由于各种原因，不可能严格按照TDD所提倡的方式来进行开发。但是核心代码的单元测试必不可少，只有在有单元测试覆盖的情况下，我们才能放心的进行重构与开发。</p>
+<p>一个好的单元测试要求运行时间短、可以帮忙快速的定位问题，试想一下，如果一个单元测试用例需要运行1s，那么整个项目上千个测试用例耗时难以忍受，我们更不愿意频繁的跑测试。</p>
+<p>有时候，我们会写一些测试代码，来测试功能是否通过，但有时这些不能称之为单元测试，因为往往这些临时写的测试代码，有下面这些特点：</p>
+<ul>
+<li>依赖数据库</li>
+<li>依赖网络通信</li>
+<li>调用文件系统</li>
+<li>需要额外的配置文件</li>
+</ul>
+<p>下面简单介绍一些单元测试中常用到的框架。</p>
+<p><strong>goconvey</strong></p>
+<p>虽然 Golang 自带了单元测试功能和很多其他第三方测试框架，但是 GoConvey 更简洁，更优雅，使用起来更方便。</p>
+<p>我们通过一个案例来介绍如何使用。</p>
+<p>待测试函数：</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">CompareSlice</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">bool</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token function">len</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">==</span> <span class="token boolean">nil</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token punctuation">(</span>b <span class="token operator">==</span> <span class="token boolean">nil</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">for</span> i<span class="token punctuation">,</span> v  <span class="token operator">:=</span> <span class="token keyword">range</span> a<span class="token punctuation">{</span>
+        <span class="token keyword">if</span> v <span class="token operator">!=</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>测试代码：</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">TestCompareSlice</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">Convey</span><span class="token punctuation">(</span><span class="token string">"TestSliceEqual"</span><span class="token punctuation">,</span> t<span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">Convey</span><span class="token punctuation">(</span><span class="token string">"should be true"</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            a <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span>
+            b <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span>
+            <span class="token function">So</span><span class="token punctuation">(</span><span class="token function">CompareSlice</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">,</span> ShouldBeTrue<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token function">Convey</span><span class="token punctuation">(</span><span class="token string">"should return true a=nil&amp;b=nil"</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">So</span><span class="token punctuation">(</span><span class="token function">CompareSlice</span><span class="token punctuation">(</span><span class="token boolean">nil</span><span class="token punctuation">,</span> <span class="token boolean">nil</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ShouldBeTrue<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token function">Convey</span><span class="token punctuation">(</span><span class="token string">"should return false"</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            a <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span>
+            b <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">}</span>
+            <span class="token function">So</span><span class="token punctuation">(</span><span class="token function">CompareSlice</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">,</span> ShouldBeFalse<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>最常用的函数就是通过<code>So</code> 进行断言。</p>
+<p>输出：</p>
+<pre class=" language-go"><code class="language-go"><span class="token operator">==</span><span class="token operator">=</span> RUN   TestCompareSlice
+
+  TestSliceEqual
+    should be <span class="token boolean">true</span> ✔
+    should <span class="token keyword">return</span> <span class="token boolean">true</span> a<span class="token operator">=</span><span class="token boolean">nil</span><span class="token operator">&amp;</span>b<span class="token operator">=</span><span class="token boolean">nil</span> ✔
+    should <span class="token keyword">return</span> <span class="token boolean">false</span> ✔
+
+
+<span class="token number">3</span> total assertions
+
+<span class="token operator">--</span><span class="token operator">-</span> PASS<span class="token punctuation">:</span> <span class="token function">TestCompareSlice</span> <span class="token punctuation">(</span><span class="token number">0.</span>00s<span class="token punctuation">)</span>
+</code></pre>
+<p>测试失败的情况：</p>
+<pre class=" language-go"><code class="language-go"><span class="token operator">==</span><span class="token operator">=</span> RUN   TestCompareSlice2
+
+  should be <span class="token boolean">true</span> ✔
+
+
+<span class="token number">1</span> total assertion
+
+
+  should <span class="token keyword">return</span> <span class="token boolean">true</span> a<span class="token operator">=</span><span class="token boolean">nil</span><span class="token operator">&amp;</span>b<span class="token operator">=</span><span class="token boolean">nil</span> ✔
+
+
+<span class="token number">2</span> total assertions
+
+
+  should <span class="token keyword">return</span> <span class="token boolean">false</span> ✘
+
+
+Failures<span class="token punctuation">:</span>
+
+  <span class="token operator">*</span> <span class="token operator">/</span>Users<span class="token operator">/</span>jiami<span class="token operator">/</span><span class="token keyword">go</span><span class="token operator">/</span>src<span class="token operator">/</span>awesome<span class="token operator">/</span>example_test<span class="token punctuation">.</span><span class="token keyword">go</span>
+  Line <span class="token number">44</span><span class="token punctuation">:</span>
+  Expected<span class="token punctuation">:</span> <span class="token boolean">false</span>
+  Actual<span class="token punctuation">:</span>   <span class="token boolean">true</span>
+  goroutine <span class="token number">7</span> <span class="token punctuation">[</span>running<span class="token punctuation">]</span><span class="token punctuation">:</span>
+</code></pre>
+<p>使用时有如下几个要点：</p>
+<p>1、<code>import goconvey</code>包时，前面加”.”号，以减少冗余代码。</p>
+<p>2、测试函数名称以<code>Test</code>开头，参数是<code>*testing.T</code>。</p>
+<p>3、每个测试用例必须用<code>Convey</code>函数包裹起来。</p>
+<p><strong>gomoke</strong></p>
+<p>当待测试的函数/对象的依赖关系很复杂，并且有些依赖不能直接创建，例如数据库连接、文件I/O等。这种场景就非常适合使用 mock/stub 测试。简单来说，就是用 mock 对象模拟依赖项的行为。</p>
+<p>gomoke是官方提供的moke框架，下面将用一个简单的例子来介绍如何使用。</p>
+<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">// 文件名： db.go</span>
+<span class="token keyword">type</span> DB <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    <span class="token function">Get</span><span class="token punctuation">(</span>key <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">GetFromDB</span><span class="token punctuation">(</span>db DB<span class="token punctuation">,</span> key <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token builtin">int</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span> value<span class="token punctuation">,</span> err <span class="token operator">:=</span> db<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">==</span> <span class="token boolean">nil</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> value
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>在测试用例中，不能创建真正的数据库连接，这个时候我们就可以<code>moke</code> DB 接口。</p>
+<p>首先生成 moke 对象:</p>
+<pre class=" language-shell"><code class="language-shell">mockgen -source=db.go -destination=db_mock.go -package=main
+</code></pre>
+<p>此时，就会生成一个名为 <code>db_moke.go</code> 的文件，部分代码如下：</p>
+<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">// MockDB is a mock of DB interface</span>
+<span class="token keyword">type</span> MockDB <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    ctrl     <span class="token operator">*</span>gomock<span class="token punctuation">.</span>Controller
+    recorder <span class="token operator">*</span>MockDBMockRecorder
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// MockDBMockRecorder is the mock recorder for MockDB</span>
+<span class="token keyword">type</span> MockDBMockRecorder <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    mock <span class="token operator">*</span>MockDB
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// NewMockDB creates a new mock instance</span>
+<span class="token keyword">func</span> <span class="token function">NewMockDB</span><span class="token punctuation">(</span>ctrl <span class="token operator">*</span>gomock<span class="token punctuation">.</span>Controller<span class="token punctuation">)</span> <span class="token operator">*</span>MockDB <span class="token punctuation">{</span>
+    mock <span class="token operator">:=</span> <span class="token operator">&amp;</span>MockDB<span class="token punctuation">{</span>ctrl<span class="token punctuation">:</span> ctrl<span class="token punctuation">}</span>
+    mock<span class="token punctuation">.</span>recorder <span class="token operator">=</span> <span class="token operator">&amp;</span>MockDBMockRecorder<span class="token punctuation">{</span>mock<span class="token punctuation">}</span>
+    <span class="token keyword">return</span> mock
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// EXPECT returns an object that allows the caller to indicate expected use</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>m <span class="token operator">*</span>MockDB<span class="token punctuation">)</span> <span class="token function">EXPECT</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span>MockDBMockRecorder <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> m<span class="token punctuation">.</span>recorder
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// Get mocks base method</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>m <span class="token operator">*</span>MockDB<span class="token punctuation">)</span> <span class="token function">Get</span><span class="token punctuation">(</span>key <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ret <span class="token operator">:=</span> m<span class="token punctuation">.</span>ctrl<span class="token punctuation">.</span><span class="token function">Call</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span> <span class="token string">"Get"</span><span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+    ret0<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> ret<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">)</span>
+    ret1<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> ret<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token builtin">error</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> ret0<span class="token punctuation">,</span> ret1
+<span class="token punctuation">}</span>
+<span class="token operator">...</span>
+</code></pre>
+<p>接下来，在我们的测试用例中就可以使用 <code>MockDB</code> 来模拟DB操作了，测试代码如下：</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">TestGetFromDB</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">Convey</span><span class="token punctuation">(</span><span class="token string">"test mock"</span><span class="token punctuation">,</span>t<span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ctrl <span class="token operator">:=</span> gomock<span class="token punctuation">.</span><span class="token function">NewController</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+        <span class="token keyword">defer</span> ctrl<span class="token punctuation">.</span><span class="token function">Finish</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+        m <span class="token operator">:=</span> <span class="token function">NewMockDB</span><span class="token punctuation">(</span>ctrl<span class="token punctuation">)</span>
+        m<span class="token punctuation">.</span><span class="token function">EXPECT</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span>gomock<span class="token punctuation">.</span><span class="token function">Eq</span><span class="token punctuation">(</span><span class="token string">"Test"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Return</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> errors<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token string">"not exist"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token function">So</span><span class="token punctuation">(</span><span class="token function">GetFromDB</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span> <span class="token string">"Test"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ShouldEqual<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+        m<span class="token punctuation">.</span><span class="token function">EXPECT</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span>gomock<span class="token punctuation">.</span><span class="token function">Any</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">DoAndReturn</span><span class="token punctuation">(</span><span class="token keyword">func</span><span class="token punctuation">(</span>key <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span> key <span class="token operator">==</span> <span class="token string">"test"</span><span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token boolean">nil</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> errors<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token string">"not exist"</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">AnyTimes</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token function">So</span><span class="token punctuation">(</span><span class="token function">GetFromDB</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span> <span class="token string">"test"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ShouldEqual<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token function">So</span><span class="token punctuation">(</span><span class="token function">GetFromDB</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span> <span class="token string">"test1"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ShouldEqual<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>我们可以使用<code>EXCEPT()</code>函数来“打桩”——给定明确的参数和返回值、检测调用次数、调用顺序，动态设置返回值等。</p>
+<p><strong>gomonkey</strong></p>
+<p>这是国人写的一个很方便的打桩框架，接口友好，功能强大，支持下面一些特性：</p>
+<ul>
+<li>支持为一个函数打一个桩</li>
+<li>支持为一个成员方法打一个桩</li>
+<li>支持为一个全局变量打一个桩</li>
+<li>支持为一个函数变量打一个桩</li>
+<li>支持为一个函数打一个特定的桩序列</li>
+<li>支持为一个成员方法打一个特定的桩序列</li>
+<li>支持为一个函数变量打一个特定的桩序列</li>
+</ul>
+<p>下面就“支持为一个函数打一个桩”、“支持为一个成员方法打一个桩”、“支持为一个全局变量打一个桩”来举例说明如何使用，具体功能有兴趣可自行搜索。</p>
+<p><strong>为一个函数打一个桩</strong></p>
+<p>需要用到下面一个接口：</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">ApplyFunc</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> double <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">*</span>Patches
+<span class="token keyword">func</span> <span class="token punctuation">(</span>this <span class="token operator">*</span>Patches<span class="token punctuation">)</span> <span class="token function">ApplyFunc</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> double <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">*</span>Patches
+</code></pre>
+<p>ApplyFunc 第一个参数是函数名，第二个参数是桩函数。测试完成后，patches 对象通过 Reset 成员方法删除所有测试桩。<br>假设我们有一个用来比较大小的函数：</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">CompareInt</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token builtin">int</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span> a <span class="token operator">==</span> b<span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span> a <span class="token operator">></span> b<span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>我们需要为这个函数“打桩”，让它在被调用时返回指定的结果，用法如下：</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">TestCompareInt</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">Convey</span><span class="token punctuation">(</span><span class="token string">"CompareInt"</span><span class="token punctuation">,</span> t<span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        patch <span class="token operator">:=</span> <span class="token function">ApplyFunc</span><span class="token punctuation">(</span>CompareInt<span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token boolean">_</span> <span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">int</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token keyword">defer</span> patch<span class="token punctuation">.</span><span class="token function">Reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token function">So</span><span class="token punctuation">(</span><span class="token function">CompareInt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ShouldEqual<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>设置完桩函数之后，我们再次调用，无论参数是什么，它都会返回 0 值。</p>
+<p>这个也可以给标准库中的函数进行“打桩”，比如 <code>strconv.FormatInt</code>函数：</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">TestPackage</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">Convey</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">,</span> t<span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        patch <span class="token operator">:=</span> <span class="token function">ApplyFunc</span><span class="token punctuation">(</span>strconv<span class="token punctuation">.</span>FormatInt<span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token boolean">_</span> <span class="token builtin">int64</span><span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token string">"test_package"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token keyword">defer</span> patch<span class="token punctuation">.</span><span class="token function">Reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token function">So</span><span class="token punctuation">(</span>strconv<span class="token punctuation">.</span><span class="token function">FormatInt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ShouldEqual<span class="token punctuation">,</span> <span class="token string">"test_package"</span><span class="token punctuation">)</span>
+        <span class="token function">Convey</span><span class="token punctuation">(</span><span class="token string">"test_2"</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">So</span><span class="token punctuation">(</span>strconv<span class="token punctuation">.</span><span class="token function">FormatInt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ShouldEqual<span class="token punctuation">,</span> <span class="token string">"test_package"</span><span class="token punctuation">)</span>
+            patch<span class="token punctuation">.</span><span class="token function">Reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token function">So</span><span class="token punctuation">(</span>strconv<span class="token punctuation">.</span><span class="token function">FormatInt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ShouldEqual<span class="token punctuation">,</span> <span class="token string">"1"</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>设置完桩函数后，<code>strconv.FormatInt</code>就不是原先的函数了，它只会返回”test_package”。</p>
+<p><strong>为一个成员方法打一个桩</strong></p>
+<p>需要用到下面这个接口：</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">ApplyMethod</span><span class="token punctuation">(</span>target reflect<span class="token punctuation">.</span>Type<span class="token punctuation">,</span> methodName <span class="token builtin">string</span><span class="token punctuation">,</span> double <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">*</span>Patches
+<span class="token keyword">func</span> <span class="token punctuation">(</span>this <span class="token operator">*</span>Patches<span class="token punctuation">)</span> <span class="token function">ApplyMethod</span><span class="token punctuation">(</span>target reflect<span class="token punctuation">.</span>Type<span class="token punctuation">,</span> methodName <span class="token builtin">string</span><span class="token punctuation">,</span> double <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">*</span>Patches
+</code></pre>
+<p>例如，我们有个 <code>RedisCli</code> 类，用来表示 redis 连接，其中有个 Get 方法：</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">type</span> RedisCli <span class="token keyword">struct</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>r <span class="token operator">*</span>RedisCli<span class="token punctuation">)</span><span class="token function">Get</span><span class="token punctuation">(</span>key <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> key <span class="token operator">+</span> <span class="token string">"test"</span><span class="token punctuation">,</span> <span class="token boolean">nil</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>在单元测试中，不能真正的连接 redis，为了测试代码，我们除了可以 moke 外，还可以为 <code>Get</code> 方法打桩，让它暂时返回指定结果。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">TestClass</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">Convey</span><span class="token punctuation">(</span><span class="token string">"test class"</span><span class="token punctuation">,</span> t<span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> redisCli <span class="token operator">*</span>RedisCli
+        patch <span class="token operator">:=</span> <span class="token function">ApplyMethod</span><span class="token punctuation">(</span>reflect<span class="token punctuation">.</span><span class="token function">TypeOf</span><span class="token punctuation">(</span>redisCli<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"Get"</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token boolean">_</span> <span class="token operator">*</span>RedisCli<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token string">"test_redis_get"</span><span class="token punctuation">,</span> <span class="token boolean">nil</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token keyword">defer</span> patch<span class="token punctuation">.</span><span class="token function">Reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        redisCli <span class="token operator">=</span> <span class="token operator">&amp;</span>RedisCli<span class="token punctuation">{</span><span class="token punctuation">}</span>
+        rsp<span class="token punctuation">,</span> err <span class="token operator">:=</span> redisCli<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">)</span>
+        <span class="token function">So</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> ShouldBeNil<span class="token punctuation">)</span>
+        <span class="token function">So</span><span class="token punctuation">(</span>rsp<span class="token punctuation">,</span> ShouldEqual<span class="token punctuation">,</span> <span class="token string">"test_redis_get"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>注意：如果打桩目标为内联的函数或成员方法，请在测试时通过命令行参数 <code>-gcflags=-l</code> 关闭内联优化。</p>
+<p><strong>为一个全局变量打一个桩</strong></p>
+<p>需要用到下面一个接口：</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">ApplyGlobalVar</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> double <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">*</span>Patches
+<span class="token keyword">func</span> <span class="token punctuation">(</span>this <span class="token operator">*</span>Patches<span class="token punctuation">)</span> <span class="token function">ApplyGlobalVar</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> double <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">*</span>Patches
+</code></pre>
+<p>使用示例如下：</p>
+<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">// 全局变量插桩</span>
+<span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token keyword">func</span> <span class="token function">TestApplyGlobalVar</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">Convey</span><span class="token punctuation">(</span><span class="token string">"test global var"</span><span class="token punctuation">,</span> t<span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">Convey</span><span class="token punctuation">(</span><span class="token string">"change"</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            patch <span class="token operator">:=</span> <span class="token function">ApplyGlobalVar</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>num<span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+            <span class="token keyword">defer</span> patch<span class="token punctuation">.</span><span class="token function">Reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+            <span class="token function">So</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> ShouldEqual<span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+        <span class="token function">Convey</span><span class="token punctuation">(</span><span class="token string">"recover"</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">So</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> ShouldEqual<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本文内容只是作为一个简单的介绍，很多内容被舍弃掉了，如果觉得太浅显或太长不看，那么只需要在编码时记得时刻问自己下面两个问题：</p>
+<ul>
+<li>如果这样写代码，半年后的我会不会骂现在的自己？</li>
+<li>这块代码怎样写才方便测试？</li>
+</ul>
+
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'http://mjammer.com/2020/05/22/ru-he-xie-hao-dai-ma/';
+        this.page.identifier = '/2020/05/22/ru-he-xie-hao-dai-ma/';
+        this.page.title = '如何写“好”代码';
+    };
+    let disqus_shortname = 'mjammer';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/05/22/ru-he-xie-hao-dai-ma/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="如何写“好”代码">
+                        
+                        <span class="card-title">如何写“好”代码</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            代码规范与质量本文是关于代码规范和代码质量相关的主题。
+从我们手放在键盘上，敲除第一行代码开始，我们就在写bug的路上一去不返了，我们不是在写bug就是在写bug的路上，当然这些都很正常，除非我们一行代码都不写，那就不会出现bug。
+大家都
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/技术/" class="post-category" target="_blank">
+                                    技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/代码质量/" target="_blank">
+                        <span class="chip bg-color">代码质量</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/09/03/docker-image-3/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="docker 三 image 和 container">
+                        
+                        <span class="card-title">docker 三 image 和 container</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+image 之于 container 就好似灵魂之于肉体，没有 image 的 container 就像”无米之炊，无源之水“。
+
+docker image 是静态的内容，container 是动态的内容。
+学习 image，需要牢记下面
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/技术/" class="post-category" target="_blank">
+                                    技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/docker-系列文章/" target="_blank">
+                        <span class="chip bg-color">docker 系列文章</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="" target="_blank">mjammer</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">10.3k</span>
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/mjammer" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
